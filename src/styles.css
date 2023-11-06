@@ -28,6 +28,13 @@ body {
   margin-top: 10%;
 }
 
+#imgContainer {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
 #cityName {
   font-size: 25px;
   font-weight: 400;
@@ -70,9 +77,26 @@ body {
 
 #search {
   width: 20px;
+  height: 30px;
 }
 
 .gifImg {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
+}
+
+#city {
+  width: 98%;
+  border: 1px black solid;
+  height: 30px;
+}
+
+.img {
+  padding-top: 10px;
+}
+
+.searchBar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
 }
