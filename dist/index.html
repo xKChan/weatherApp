@@ -10,26 +10,35 @@
   <body>
     <div id="weatherContainer">
       <div>
-        <h2 id="forecast"></h2>
+        <h2 id="cityName"></h2>
       </div>
       <div>
-        <h1 id="cityName"></h1>
+        <h2 id="forecast"></h2>
+        <p id="feels"></p>
       </div>
+
       <div id="tempContainer">
-        <div>
-          <p id="tempNow"></p>
-          <p id="feels"></p>
-        </div>
-        <div #minMax>
-          <p id="lows"></p>
-          <p id="highs"></p>
-        </div>
-        <div>
-          <p id="humidity"></p>
+        <div id="displayTemp">
+          <h1 id="tempNow"></h1>
+          <div>
+            <div #dayNum>
+              <p id="lows" class="minmax">
+                Low: <span id="lowsNum" class="minmaxNum"></span>
+              </p>
+              <p id="highs" class="minmax">
+                High: <span id="highNum" class="minmaxNum"></span>
+              </p>
+              <p id="humidity" class="minmax">
+                Humidity: <span id="humidityNum" class="minmaxNum"></span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <img src="#" alt="" />
+    <div class="img">
+      <img src="#" alt="" />
+    </div>
     <!-- <input id="city" type="text" /> -->
   </body>
 </html>

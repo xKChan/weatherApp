@@ -3,9 +3,9 @@ const cityName = document.getElementById("cityName");
 const forecast = document.getElementById("forecast");
 const tempNow = document.getElementById("tempNow");
 const feels = document.getElementById("feels");
-const low = document.getElementById("lows");
-const highs = document.getElementById("highs");
-const humidity = document.getElementById("humidity");
+const lowNum = document.getElementById("lowsNum");
+const highsNum = document.getElementById("highNum");
+const humidityNum = document.getElementById("humidityNum");
 
 const site = "http://api.weatherapi.com/v1";
 const currentWeather = "/forecast.json";
@@ -20,13 +20,12 @@ export function getWeather() {
       return response.json();
     })
     .then(function (response) {
-      console.log(response);
       forecast.textContent = response.current.condition.text;
       cityName.textContent = `${response.location.name}, ${response.location.country}`;
-      tempNow.textContent = response.current.temp_c;
-      feels.textContent = `Feels Like: ${response.current.feelslike_c}`;
-      low.textContent = `Low: ${response.forecast.forecastday[0].day.mintemp_c}`;
-      highs.textContent = `High: ${response.forecast.forecastday[0].day.maxtemp_c}`;
-      humidity.textContent = `Humidity: ${response.current.humidity}`;
+      tempNow.textContent = `${response.current.temp_c}°C`;
+      feels.textContent = `Feels Like: ${response.current.feelslike_c}°C`;
+      lowNum.textContent = `${response.forecast.forecastday[0].day.mintemp_c}°C`;
+      highsNum.textContent = `${response.forecast.forecastday[0].day.maxtemp_c}°C`;
+      humidityNum.textContent = `${response.current.humidity}%`;
     });
 }
