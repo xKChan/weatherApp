@@ -1,5 +1,3 @@
-import SearchIcon from "./imgs/magnify.svg";
-
 const site = "http://api.weatherapi.com/v1";
 const currentWeather = "/forecast.json";
 const key = "e2cdef5400cf4cf5ab9234643230211";
@@ -24,10 +22,6 @@ const lowNum = document.getElementById("lowsNum");
 const highsNum = document.getElementById("highNum");
 const humidityNum = document.getElementById("humidityNum");
 const searchIconLoad = document.querySelector("#search");
-
-const myIcon = new Image();
-myIcon.src = SearchIcon;
-searchIconLoad.appendChild(myIcon);
 
 export function getWeather() {
   fetch(`${site}${currentWeather}?key=${key}&q=${city}`, {
