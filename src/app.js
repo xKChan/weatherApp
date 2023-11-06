@@ -1,4 +1,3 @@
-const cityInput = document.getElementById("city");
 const cityName = document.getElementById("cityName");
 const forecast = document.getElementById("forecast");
 const tempNow = document.getElementById("tempNow");
