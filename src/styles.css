@@ -83,11 +83,13 @@ body {
 .gifImg {
   width: 300px;
   height: 300px;
+  border: 3px black solid;
 }
 
 #city {
   width: 98%;
   border: 1px black solid;
+  border-radius: 5px;
   height: 30px;
 }
 
