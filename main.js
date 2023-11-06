@@ -20,23 +20,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/gif.js":
-/*!********************!*\
-  !*** ./src/gif.js ***!
-  \********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getGif: () => (/* binding */ getGif)\n/* harmony export */ });\nconst img = document.querySelector(\"img\");\n\nconst site = \"https://api.giphy.com/v1/gifs/translate\";\nconst key = \"po6a3izbSGoJYYi71qWUx73gpMJN6K8n\";\nconst api = \"api_key=\";\nlet search = \"cloudy\";\n\nfunction getGif() {\n  fetch(`${site}?${api}${key}&s=${search}`, {\n    mode: \"cors\",\n  })\n    .then(function (resolve) {\n      return resolve.json();\n    })\n    .then(function (resolve) {\n      img.src = resolve.data.images.original.url;\n    });\n}\n\n\n//# sourceURL=webpack://weatherapp/./src/gif.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n/* harmony import */ var _gif__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gif */ \"./src/gif.js\");\n\n\n\n(0,_app__WEBPACK_IMPORTED_MODULE_0__.getWeather)();\n// getGif();\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n\n\n(0,_app__WEBPACK_IMPORTED_MODULE_0__.getWeather)();\n// getGif();\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
 
 /***/ })
 
