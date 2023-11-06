@@ -1,3 +1,5 @@
+import "./style.css";
+
 const site = "http://api.weatherapi.com/v1";
 const currentWeather = "/forecast.json";
 const key = "e2cdef5400cf4cf5ab9234643230211";
