@@ -16,7 +16,17 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getWeather: () => (/* binding */ getWeather)\n/* harmony export */ });\nconst cityInput = document.getElementById(\"city\");\nconst cityName = document.getElementById(\"cityName\");\nconst forecast = document.getElementById(\"forecast\");\nconst tempNow = document.getElementById(\"tempNow\");\nconst feels = document.getElementById(\"feels\");\nconst lowNum = document.getElementById(\"lowsNum\");\nconst highsNum = document.getElementById(\"highNum\");\nconst humidityNum = document.getElementById(\"humidityNum\");\n\nconst site = \"http://api.weatherapi.com/v1\";\nconst currentWeather = \"/forecast.json\";\nconst key = \"e2cdef5400cf4cf5ab9234643230211\";\nlet city = \"calgary\";\n\nfunction getWeather() {\n  fetch(`${site}${currentWeather}?key=${key}&q=${city}`, {\n    mode: \"cors\",\n  })\n    .then(function (response) {\n      return response.json();\n    })\n    .then(function (response) {\n      forecast.textContent = response.current.condition.text;\n      cityName.textContent = `${response.location.name}, ${response.location.country}`;\n      tempNow.textContent = `${response.current.temp_c}°C`;\n      feels.textContent = `Feels Like: ${response.current.feelslike_c}°C`;\n      lowNum.textContent = `${response.forecast.forecastday[0].day.mintemp_c}°C`;\n      highsNum.textContent = `${response.forecast.forecastday[0].day.maxtemp_c}°C`;\n      humidityNum.textContent = `${response.current.humidity}%`;\n    });\n}\n\n\n//# sourceURL=webpack://weatherapp/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getWeather: () => (/* binding */ getWeather)\n/* harmony export */ });\nconst cityName = document.getElementById(\"cityName\");\nconst forecast = document.getElementById(\"forecast\");\nconst tempNow = document.getElementById(\"tempNow\");\nconst feels = document.getElementById(\"feels\");\nconst lowNum = document.getElementById(\"lowsNum\");\nconst highsNum = document.getElementById(\"highNum\");\nconst humidityNum = document.getElementById(\"humidityNum\");\n\nconst site = \"http://api.weatherapi.com/v1\";\nconst currentWeather = \"/forecast.json\";\nconst key = \"e2cdef5400cf4cf5ab9234643230211\";\nlet city = \"calgary\";\n\nfunction getWeather() {\n  fetch(`${site}${currentWeather}?key=${key}&q=${city}`, {\n    mode: \"cors\",\n  })\n    .then(function (response) {\n      return response.json();\n    })\n    .then(function (response) {\n      forecast.textContent = response.current.condition.text;\n      cityName.textContent = `${response.location.name}, ${response.location.country}`;\n      tempNow.textContent = `${response.current.temp_c}°C`;\n      feels.textContent = `Feels Like: ${response.current.feelslike_c}°C`;\n      lowNum.textContent = `${response.forecast.forecastday[0].day.mintemp_c}°C`;\n      highsNum.textContent = `${response.forecast.forecastday[0].day.maxtemp_c}°C`;\n      humidityNum.textContent = `${response.current.humidity}%`;\n    });\n}\n\n\n//# sourceURL=webpack://weatherapp/./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/gif.js":
+/*!********************!*\
+  !*** ./src/gif.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getGif: () => (/* binding */ getGif)\n/* harmony export */ });\nconst img = document.querySelector(\"img\");\n\nconst site = \"https://api.giphy.com/v1/gifs/translate\";\nconst key = \"po6a3izbSGoJYYi71qWUx73gpMJN6K8n\";\nconst api = \"api_key=\";\nlet search = \"sunny\";\n\nfunction getGif() {\n  fetch(`${site}?${api}${key}&s=${search}`, {\n    mode: \"cors\",\n  })\n    .then(function (resolve) {\n      return resolve.json();\n    })\n    .then(function (resolve) {\n      img.src = resolve.data.images.original.url;\n    });\n}\n\n\n//# sourceURL=webpack://weatherapp/./src/gif.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n\n\n(0,_app__WEBPACK_IMPORTED_MODULE_0__.getWeather)();\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n/* harmony import */ var _gif__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gif */ \"./src/gif.js\");\n\n\n\n(0,_app__WEBPACK_IMPORTED_MODULE_0__.getWeather)();\n(0,_gif__WEBPACK_IMPORTED_MODULE_1__.getGif)();\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
 
 /***/ })
 
