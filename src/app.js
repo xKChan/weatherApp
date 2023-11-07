@@ -9,13 +9,6 @@ let searchGif = "";
 const search = document.getElementById("search");
 const searchInput = document.getElementById("city");
 
-function searchCity() {
-  const getCityName = document.getElementById("city").value;
-  city = getCityName;
-  console.log(city);
-  getWeather();
-}
-
 const cityName = document.getElementById("cityName");
 const forecast = document.getElementById("forecast");
 const tempNow = document.getElementById("tempNow");
@@ -23,16 +16,13 @@ const feels = document.getElementById("feels");
 const lowNum = document.getElementById("lowsNum");
 const highsNum = document.getElementById("highNum");
 const humidityNum = document.getElementById("humidityNum");
-const searchIconLoad = document.querySelector("#search");
 
 export function getWeather() {
   fetch(`${site}${currentWeather}?key=${key}&q=${city}`, {
     mode: "cors",
   })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
+    .then((response) => response.json())
+    .then((response) => {
       forecast.textContent = response.current.condition.text;
       searchGif = response.current.condition.text;
       console.log(searchGif);
@@ -43,12 +33,16 @@ export function getWeather() {
       highsNum.textContent = `${response.forecast.forecastday[0].day.maxtemp_c}°C`;
       humidityNum.textContent = `${response.current.humidity}%`;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
 }
 
-getCity();
+function searchCity() {
+  const getCityName = document.getElementById("city").value;
+  city = getCityName;
+  getWeather();
+}
 
 //
 // GIF
@@ -67,10 +61,8 @@ export function getGif() {
   fetch(`${siteGif}?${apiGif}${keyGif}&s=${searchGif}`, {
     mode: "cors",
   })
-    .then(function (resolve) {
-      return resolve.json();
-    })
-    .then(function (resolve) {
+    .then((resolve) => resolve.json())
+    .then((resolve) => {
       img.src = resolve.data.images.original.url;
     });
 }
@@ -95,3 +87,5 @@ function getCity() {
     }
   });
 }
+
+getCity();
